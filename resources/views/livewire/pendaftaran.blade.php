@@ -49,6 +49,7 @@
 
         <!-- START DATA -->
         <h1>Data Penerima Beasiswa</h1>
+        {{-- {{$dataPendaftar->links()}} --}}
         <div class="my-3 p-3 bg-body rounded shadow-sm">
             <table class="table table-striped">
                 <thead>
@@ -61,18 +62,21 @@
                     </tr>
                 </thead>
                 <tbody>
+                    @foreach ($dataPendaftar as $key => $value)
                     <tr>
-                        <td>1</td>
-                        <td>Muhammad</td>
-                        <td>muhammad@gmail.com</td>
-                        <td>Yogyakarta</td>
+                        <td>{{$dataPendaftar->firstItem() + $key}}</td>
+                        <td>{{$value->nama}}</td>
+                        <td>{{$value->email}}</td>
+                        <td>{{$value->alamat}}</td>
                         <td>
                             <a href="" class="btn btn-warning btn-sm">Edit</a>
                             <a href="" class="btn btn-danger btn-sm">Del</a>
                         </td>
                     </tr>
+                    @endforeach
                 </tbody>
             </table>
+            {{$dataPendaftar->links()}}
 
         </div>
         <!-- AKHIR DATA -->

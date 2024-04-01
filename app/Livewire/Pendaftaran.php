@@ -4,12 +4,16 @@ namespace App\Livewire;
 
 use App\Models\Pendaftaran as ModelsPendaftaran;
 use Livewire\Component;
+use Livewire\WithPagination;
 
 class Pendaftaran extends Component
 {
+    use WithPagination;
+    protected $paginationTheme = 'bootstrap';
     public $nama;
     public $email;
     public $alamat;
+    // public $dataPendaftar;
     public function store()
     {
         $rules = [
@@ -29,6 +33,7 @@ class Pendaftaran extends Component
     }
     public function render()
     {
-        return view('livewire.pendaftaran');
+        $data = ModelsPendaftaran::orderBy('nama', 'ASC')->paginate(10);
+        return view('livewire.pendaftaran', ['dataPendaftar' => $data]);
     }
 }

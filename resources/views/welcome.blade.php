@@ -20,11 +20,11 @@
         <div class="row">
 
           <div class="col-lg-12 col-md-6 footer-contact"><center>
-            <h3>PFsains - By Pertamina Foundation</h3>
+            <h3>Pendaftaran Beasiswa - By PT.Sentrakom Binatama</h3>
             <p>
-              Jl. Teuku Nyak Arief, Kawasan Pertamina Simprug, Kebayoran Lama, Jakarta 12220 <br>
-              <strong>Phone:</strong> +62 21 7223029 ext. 3808<br>
-              <strong>Email:</strong> info@pertaminafoundation.org<br></ce ter>
+              Jalan bangka II nomor 43D mampang prapatan, Jakarta Selatan 12220 <br>
+              <strong>Phone:</strong> +62 823 1070 0505 <br>
+              <strong>Email:</strong> Ferdiansah1605@gmail.com<br></ce ter>
             </p>
           </div>
 
@@ -36,7 +36,7 @@
 
       <div class="mr-md-auto text-center text-md-left">
         <div class="copyright">
-          Copyright &copy; 2020-2022 <strong><span>Pertamina Foundation</span></strong>. All Rights Reserved.
+          Copyright &copy; 2024 <strong><span>PT.Sentrakom Binatama</span></strong>. All Rights Reserved.
         </div>
       </div>
       <div class="social-links text-center text-md-right pt-3 pt-md-0">

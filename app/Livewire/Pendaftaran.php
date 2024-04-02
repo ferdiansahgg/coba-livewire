@@ -30,6 +30,7 @@ class Pendaftaran extends Component
         ];
         $validatedData = $this->validate($rules, $pesan);
         ModelsPendaftaran::create($validatedData);
+        $this->clear();
         session()->flash('message', 'Data berhasil disimpan');
     }
     public function edit($id)

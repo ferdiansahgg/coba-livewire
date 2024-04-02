@@ -69,11 +69,13 @@ class Pendaftaran extends Component
         $this->updateData = false;
         $this->idPendaftar = '';
     }
-    public function delete($id)
+    public function delete()
     {
+        $id = $this->idPendaftar;
         ModelsPendaftaran::find($id)->delete();
         session()->flash('message', 'Data berhasil dihapus');
         $this->clear();
+        return redirect()->to('/');
     }
     public function deleteConfirm($id)
     {

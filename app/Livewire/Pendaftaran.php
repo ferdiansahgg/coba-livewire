@@ -13,7 +13,8 @@ class Pendaftaran extends Component
     public $nama;
     public $email;
     public $alamat;
-    // public $dataPendaftar;
+    public $updateData = false;
+    public $idPendaftar;
     public function store()
     {
         $rules = [
@@ -30,6 +31,53 @@ class Pendaftaran extends Component
         $validatedData = $this->validate($rules, $pesan);
         ModelsPendaftaran::create($validatedData);
         session()->flash('message', 'Data berhasil disimpan');
+    }
+    public function edit($id)
+    {
+        $data = ModelsPendaftaran::find($id);
+        $this->nama = $data->nama;
+        $this->email = $data->email;
+        $this->alamat = $data->alamat;
+        $this->updateData = true;
+        $this->idPendaftar = $id;
+    }
+    public function update()
+    {
+
+        $rules = [
+            'nama' => 'required',
+            'email' => 'required|email',
+            'alamat' => 'required',
+        ];
+        $pesan = [
+            'nama.required' => 'Nama tidak boleh kosong',
+            'email.required' => 'Email tidak boleh kosong',
+            'email.email' => 'Email tidak valid',
+            'alamat.required' => 'Alamat tidak boleh kosong',
+        ];
+        $validatedData = $this->validate($rules, $pesan);
+        $data = ModelsPendaftaran::find($this->idPendaftar);
+        $data->update($validatedData);
+        session()->flash('message', 'Data berhasil diubah');
+        $this->clear();
+    }
+    public function clear()
+    {
+        $this->nama = '';
+        $this->email = '';
+        $this->alamat = '';
+        $this->updateData = false;
+        $this->idPendaftar = '';
+    }
+    public function delete($id)
+    {
+        ModelsPendaftaran::find($id)->delete();
+        session()->flash('message', 'Data berhasil dihapus');
+        $this->clear();
+    }
+    public function deleteConfirm($id)
+    {
+        $this->idPendaftar = $id;
     }
     public function render()
     {
